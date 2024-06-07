@@ -6,7 +6,7 @@ const AuthPage = (props) => {
     e.preventDefault();
     const { value } = e.target[0];
     axios
-      .post('{backendUrl}/authenticate', { username: value })
+      .post(`${backendUrl}/authenticate`, { username: value })
       .then(r => props.onAuth({ ...r.data, secret: value }))
       .catch(e => console.log('error', e))
   };

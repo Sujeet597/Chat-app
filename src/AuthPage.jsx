@@ -1,11 +1,12 @@
 import axios from "axios";
 import App from "./App";
+const backendUrl = 'https://chat-app-backend-1-umup.onrender.com'
 const AuthPage = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
     axios
-      .post('http://localhost:3001/authenticate', { username: value })
+      .post('{backendUrl}/authenticate', { username: value })
       .then(r => props.onAuth({ ...r.data, secret: value }))
       .catch(e => console.log('error', e))
   };

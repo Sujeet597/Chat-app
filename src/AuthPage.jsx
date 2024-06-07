@@ -1,6 +1,6 @@
 import axios from "axios";
 import App from "./App";
-const backendUrl = 'https://chat-app-backend-1-umup.onrender.com'
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const AuthPage = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
